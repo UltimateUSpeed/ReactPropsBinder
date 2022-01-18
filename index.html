@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ReactPropsBinder demo</title>
+    <script src="js-libs/react.js"></script>
+    <script src="js-libs/react-dom.js"></script>
+    <script src="js-libs/babel.js"></script>
+    <script src="js/ReactPropsBinder.js"></script>
+    <script src="js/app.js" type="text/babel"></script>
+    <style type="text/css">
+      body {
+        background: #222;
+        padding: 20px;
+        font-family: Verdana;
+      }
+      code { color: #09f; }
+      .doc { color: #aaa; }
+      #root {
+        margin-top: 15px;
+        background: #fff;
+        border-radius: 4px;
+        padding: 20px;
+      }
+      .status {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 8px;
+        margin: 0 5px;
+        background-color: #b30;
+      }
+      .status.online { background-color: #3b0; }
+    </style>
+  </head>
+  <body>
+    <div class="doc">
+      Click this <button type="button" onclick="ReactPropsBinder.set('me.name', prompt('New name:', 'Jean Chaine'));">button</button>
+      to run this code <code>ReactPropsBinder.set("me.name", prompt("New name:", "Jean Chaine"));</code> in order to update UI ;
+      it will update the data value of "me.name" key in database and then trigger a props change to binded React components
+      to dynamically update the UI to display the name of connected user.<br />
+      You can <button type="button" onclick="toggleMyStatus();">toggle</button> your online status here!
+    </div>
+    <div id="root">Loading...</div>
+  </body>
+</html>
